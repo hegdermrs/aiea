@@ -74,43 +74,30 @@ export function SiteLoader() {
 
   if (!active) return null;
 
-  const revealing = phase === "reveal";
-
   return (
     <div
       className="fixed inset-0 z-[10000] overflow-hidden"
       data-site-loader
       aria-hidden
     >
-      {/* Black sheet — circular hole expands from center outward */}
       <motion.div
         className="absolute inset-0 bg-zinc-950"
         style={{
           maskImage: mask,
           WebkitMaskImage: mask,
         }}
-      />
-
-      <motion.div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center px-6"
-        initial={false}
-        animate={{
-          opacity: revealing ? 0 : 1,
-          scale: revealing ? 1.06 : 1,
-        }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
       >
-        <SiteLogo className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl" />
+        {phase === "loading" && (
+          <>
+            <div className="absolute inset-0 flex items-center justify-center px-6">
+              <SiteLogo className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl" />
+            </div>
+            <p className="loader-label pointer-events-none absolute bottom-10 left-0 right-0 text-center text-xs font-medium uppercase tracking-[0.32em] text-zinc-500">
+              Loading
+            </p>
+          </>
+        )}
       </motion.div>
-
-      <motion.p
-        className="loader-label pointer-events-none absolute bottom-10 left-0 right-0 text-center text-xs font-medium uppercase tracking-[0.32em] text-zinc-500"
-        initial={false}
-        animate={{ opacity: revealing ? 0 : 1 }}
-        transition={{ duration: 0.2 }}
-      >
-        Loading
-      </motion.p>
     </div>
   );
 }

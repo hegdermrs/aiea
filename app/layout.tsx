@@ -3,6 +3,7 @@ import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/custom-cursor";
 import { RainbowGlow } from "@/components/rainbow-glow";
+import { SiteLoader } from "@/components/site-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +37,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`dark ${geistSans.variable} ${instrumentSerif.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(sessionStorage.getItem("aiea-loader-seen")){document.documentElement.classList.add("aiea-ready")}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="relative min-h-full flex flex-col bg-zinc-950 font-sans text-zinc-50">
+        <SiteLoader />
         <RainbowGlow position="top" className="z-[45]" />
         {children}
         <CustomCursor />

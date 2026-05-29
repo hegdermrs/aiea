@@ -2,6 +2,7 @@ import { MetalBorderCard } from "@/components/metal-border-card";
 import { MetalCta } from "@/components/metal-cta";
 import { SectionBackdrop } from "@/components/section-backdrop";
 import { SectionReveal } from "@/components/section-reveal";
+import { SiteLogo } from "@/components/site-logo";
 import { ThemeIcon } from "@/components/theme-icon";
 import { APPLY_URL, PRICING_INCLUDES } from "@/lib/constants";
 import { getSectionIcon, PRICING_ICONS } from "@/lib/section-icons";
@@ -42,7 +43,8 @@ export function Pricing() {
                 </span>
               </div>
               <p className="mt-2 text-sm text-zinc-400">
-                Inside the AI Execution Accelerator
+                Inside the{" "}
+                <SiteLogo className="inline text-inherit" />
               </p>
             </div>
             <div className="px-8 pb-8 pt-8">

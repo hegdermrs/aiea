@@ -15,7 +15,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { APPLY_URL, NAV_LINKS, SITE } from "@/lib/constants";
+import { SiteLogo } from "@/components/site-logo";
+import { APPLY_URL, NAV_LINKS } from "@/lib/constants";
 import { getSectionIcon, NAV_LINK_ICONS } from "@/lib/section-icons";
 import { cn } from "@/lib/utils";
 
@@ -41,11 +42,8 @@ export function Nav() {
     >
       <div className="relative mx-auto flex h-16 max-w-6xl items-center px-5 sm:px-8">
         <div className="relative z-10 flex min-w-0 items-center gap-4">
-          <Link
-            href="#"
-            className="truncate font-serif text-sm font-medium tracking-tight text-zinc-100 sm:text-base"
-          >
-            {SITE.name}
+          <Link href="#" className="shrink-0 text-sm sm:text-base">
+            <SiteLogo />
           </Link>
           <NavDivider className="hidden md:block" />
         </div>
@@ -87,8 +85,8 @@ export function Nav() {
           </SheetTrigger>
           <SheetContent side="right" className="border-white/10 bg-zinc-950">
             <SheetHeader>
-              <SheetTitle className="font-serif text-left text-zinc-100">
-                {SITE.name}
+              <SheetTitle className="text-left">
+                <SiteLogo />
               </SheetTitle>
             </SheetHeader>
             <nav className="mt-8 flex flex-col gap-1">

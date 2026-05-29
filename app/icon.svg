@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#09090b" />
+  <defs>
+    <conicGradient id="metal-a" cx="256" cy="256" gradientTransform="rotate(0 256 256)">
+      <stop offset="0%" stop-color="#fafafa" />
+      <stop offset="18%" stop-color="#71717a" />
+      <stop offset="36%" stop-color="#e4e4e7" />
+      <stop offset="54%" stop-color="#52525b" />
+      <stop offset="72%" stop-color="#d4d4d8" />
+      <stop offset="86%" stop-color="#a1a1aa" />
+      <stop offset="100%" stop-color="#fafafa" />
+    </conicGradient>
+    <conicGradient id="metal-b" cx="256" cy="256" gradientTransform="rotate(180 256 256)">
+      <stop offset="0%" stop-color="#d4d4d8" />
+      <stop offset="25%" stop-color="#fafafa" />
+      <stop offset="50%" stop-color="#52525b" />
+      <stop offset="75%" stop-color="#e4e4e7" />
+      <stop offset="100%" stop-color="#d4d4d8" />
+    </conicGradient>
+    <radialGradient id="sheen" cx="0.32" cy="0.28" r="0.55">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <mask id="ring-a">
+      <rect width="512" height="512" fill="black" />
+      <circle cx="256" cy="256" r="228" fill="white" />
+      <circle cx="256" cy="256" r="206" fill="black" />
+    </mask>
+    <mask id="ring-b">
+      <rect width="512" height="512" fill="black" />
+      <circle cx="256" cy="256" r="198" fill="white" />
+      <circle cx="256" cy="256" r="184" fill="black" />
+    </mask>
+  </defs>
+  <rect width="512" height="512" fill="url(#metal-a)" mask="url(#ring-a)" />
+  <rect width="512" height="512" fill="url(#metal-b)" mask="url(#ring-b)" />
+  <circle cx="256" cy="256" r="168" fill="#09090b" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+  <circle cx="256" cy="256" r="152" fill="url(#sheen)" />
+  <text
+    x="256"
+    y="278"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="118"
+    fill="#fafafa"
+  >
+    AEA
+  </text>
+</svg>

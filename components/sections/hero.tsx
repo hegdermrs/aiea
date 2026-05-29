@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { HeroShaderBg } from "@/components/hero-shader-bg";
 import { MetalCta } from "@/components/metal-cta";
+import { SiteLogo } from "@/components/site-logo";
 import { ProofMarquee } from "@/components/sections/proof-marquee";
 import { ThemeIcon } from "@/components/theme-icon";
 import { Badge } from "@/components/ui/badge";
@@ -27,13 +28,13 @@ export function Hero() {
       <HeroShaderBg />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-5 py-20 text-center sm:px-8">
-        <motion.p
+        <motion.div
           {...motionProps}
           transition={{ duration: 0.7, ease, delay: 0.05 }}
-          className="mb-6 text-xs font-medium uppercase tracking-[0.28em] text-zinc-500 sm:text-sm"
+          className="mb-8"
         >
-          The AI Execution Accelerator
-        </motion.p>
+          <SiteLogo className="text-xl sm:text-2xl md:text-3xl" />
+        </motion.div>
 
         <motion.h1
           {...motionProps}
